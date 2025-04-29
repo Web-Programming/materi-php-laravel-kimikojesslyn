@@ -1,0 +1,7 @@
+<div>
+<h4> Ini adalah Halaman Berita </h4>
+ID: <?php echo $id; ?> <br/>
+Title: <?php echo $title; ?> <br/>
+
+</div>
+
