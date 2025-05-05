@@ -1,26 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ProdiController extends Controller
+class DosenController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        echo "Ini halaman list prodi";
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
         //
-        echo "Ini halaman create prodi";
     }
 
     /**
@@ -35,15 +27,6 @@ class ProdiController extends Controller
      * Display the specified resource.
      */
     public function show(string $id)
-    {
-        //
-        echo "Ini detail prodi dengan id".$id;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
     {
         //
     }

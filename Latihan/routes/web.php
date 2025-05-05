@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MateriController;
+use App\Http\Controllers\ProdiController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,3 +35,10 @@ Route::get('/fakultas', function () {
     $fakultas = ["Fakultas Ilmu Komputer dan Rekayasa", "Fakultas Ilmu Ekonomi"];
     return view('fakultas.index', compact('fakultas','kampus'));
 });
+
+
+
+Route::get('/materi/index', [MateriController::class,'index']);
+Route::get('/materi/detail/{id}', [MateriController::class,'detail']);
+
+Route::resource('prodi', ProdiController::class);
