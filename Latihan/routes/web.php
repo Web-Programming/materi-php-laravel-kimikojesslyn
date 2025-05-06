@@ -42,3 +42,4 @@ Route::get('/materi/index', [MateriController::class,'index']);
 Route::get('/materi/detail/{id}', [MateriController::class,'detail']);
 
 Route::resource('prodi', ProdiController::class);
+Route::apiResource('api/mhs', MhsApiController::class);

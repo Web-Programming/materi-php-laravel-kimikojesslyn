@@ -11,7 +11,7 @@ class ProdiController extends Controller
      */
     public function index()
     {
-        echo "Ini halaman list prodi";
+       return view(view: "materi.index");
     }
 
     /**
@@ -37,7 +37,7 @@ class ProdiController extends Controller
     public function show(string $id)
     {
         //
-        echo "Ini detail prodi dengan id".$id;
+        echo "Ini detail prodi dengan id ".$id;
     }
 
     /**
