@@ -37,9 +37,28 @@ Route::get('/fakultas', function () {
 });
 
 
-
 Route::get('/materi/index', [MateriController::class,'index']);
 Route::get('/materi/detail/{id}', [MateriController::class,'detail']);
 
 Route::resource('prodi', ProdiController::class);
 Route::apiResource('api/mhs', MhsApiController::class);
+
+
+// (Tugas no.2) ------------------ 
+Route::resource('materi', Materi::class);
+Route::resource('prodi', Prodi::class);
+Route::resource('fakultas', Fakultas::class);
+Route::resource('mhs', Mahasiswa::class);
+Route::resource('dosen', Dosen::class);
+
+Route::get('/master', function(){
+    $kampus = "Universitas Multi Data Palembang";
+    $dosen = "Dosen";
+    $fakultas = "Fakultas";
+    $prodi = "Prodi";
+    $mahasiswa = "Mahasiswa";
+    $materi = "Materi";
+    return view('latihanLayout.master', compact('kampus', 'dosen', 'fakultas', 'prodi', 'mahasiswa','materi'));
+});
+
+
