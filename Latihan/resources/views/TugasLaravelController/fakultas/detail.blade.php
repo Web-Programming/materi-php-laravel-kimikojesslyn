@@ -1,16 +1,18 @@
 @extends('TugasLaravelController.master')
-@section('title', 'Detail Fakultas')
 
 @section('content')
-    
-<h2>Fakultas</h2>
-<ul>
-@if (count($fakultas) > 0)
-    @foreach ($fakultas as $item)
-        <li> {{ $item }}</li>
-    @endforeach
-@else
-    <li> Belum ada data</li>
-@endif
-</ul>
+    <div class="container mt-4">
+        <h3>Detail Fakultas</h3>
+        <table class="table table-bordered">
+            <tr>
+                <th>Nama Fakultas</th>
+                <td>{{ $fakultas->nama }}</td>
+            </tr>
+            <tr>
+                <th>Deskripsi</th>
+                <td>{{ $fakultas->deskripsi }}</td>
+            </tr>
+        </table>
+        <a href="{{ route('fakultas.index') }}" class="btn btn-secondary">Back</a>
+    </div>
 @endsection

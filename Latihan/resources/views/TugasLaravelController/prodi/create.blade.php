@@ -13,4 +13,14 @@
     <li> Belum ada data</li>
 @endif
 </ul>
+
+<form action="{{url("/prodi")}}" method="post">
+    @csrf 
+    <div class="">
+        <label class="for">
+            <input class="form-control" type="text" name="nama">
+        </label>
+    </div>
+    <button type="submit" class="btn btn-success"> Save </button>
+</form>
 @endsection

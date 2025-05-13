@@ -1,16 +1,30 @@
 @extends('TugasLaravelController.master')
-@section('title', 'Detail Mahasiswa')
 
 @section('content')
-    
-<h2>Mahasiswa</h2>
-<ul>
-@if (count($mahasiswa) > 0)
-    @foreach ($mahasiswa as $item)
-        <li> {{ $item }}</li>
-    @endforeach
-@else
-    <li> Belum ada data</li>
-@endif
-</ul>
+    <div class="container mt-4">
+        <h3>Detail Mahasiswa</h3>
+        <table class="table table-bordered">
+            <tr>
+                <th>Nama</th>
+                <td>{{ $mahasiswa->nama }}</td>
+            </tr>
+            <tr>
+                <th>Program Studi</th>
+                <td>{{ $mahasiswa->program }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ $mahasiswa->status }}</td>
+            </tr>
+            <tr>
+                <th>Tanggal Lahir</th>
+                <td>{{ $mahasiswa->tanggal_lahir }}</td>
+            </tr>
+            <tr>
+                <th>Tempat Lahir</th>
+                <td>{{ $mahasiswa->tempat_lahir }}</td>
+            </tr>
+        </table>
+        <a href="{{ url('mhs') }}" class="btn btn-secondary">Back</a>
+    </div>
 @endsection

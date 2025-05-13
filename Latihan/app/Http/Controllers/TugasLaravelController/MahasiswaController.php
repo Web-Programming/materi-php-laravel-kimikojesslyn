@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\TugasLaravelController;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class Mahasiswa extends Controller
@@ -11,7 +11,7 @@ class Mahasiswa extends Controller
      */
     public function index()
     {
-        //
+        return view('TugasLaravelController.mahasiswa.index');
     }
 
     /**
@@ -35,7 +35,26 @@ class Mahasiswa extends Controller
      */
     public function show(string $id)
     {
-        //
+        $mahasiswaList = [
+            1 => (object)[
+                'nama' => 'Jesslyn',
+                'program' => 'Sistem Informasi',
+                'status' => 'Aktif',
+                'tanggal_lahir' => '01-07-2006',
+                'tempat_lahir' => 'Palembang'
+            ],
+            2 => (object)[
+                'nama' => 'Kimiko',
+                'program' => 'Teknik Elektro',
+                'status' => 'Cuti',
+                'tanggal_lahir' => '18-08-2006',
+                'tempat_lahir' => 'Metro'
+            ],
+           
+        ];
+        
+        $mahasiswa = $mahasiswaList[$id];
+        return view('TugasLaravelController.mahasiswa.detail', compact('mahasiswa'));
     }
 
     /**

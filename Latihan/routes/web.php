@@ -1,8 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MateriController;
-use App\Http\Controllers\ProdiController;
+//use App\Http\Controllers\MateriController;
+//use App\Http\Controllers\ProdiController;
+
+
+use App\Http\Controllers\TugasLaravelController\MateriController;
+use App\Http\Controllers\TugasLaravelController\MahasiswaController;
+use App\Http\Controllers\TugasLaravelController\ProdiController;
+use App\Http\Controllers\TugasLaravelController\DosenController;
+use App\Http\Controllers\TugasLaravelController\FakultasController;
 
 
 Route::get('/', function () {
@@ -37,28 +44,26 @@ Route::get('/fakultas', function () {
 });
 
 
-Route::get('/materi/index', [MateriController::class,'index']);
-Route::get('/materi/detail/{id}', [MateriController::class,'detail']);
+//Route::get('/materi/index', [MateriController::class,'index']);
+//Route::get('/materi/detail/{id}', [MateriController::class,'detail']);
 
-Route::resource('prodi', ProdiController::class);
-Route::apiResource('api/mhs', MhsApiController::class);
+//Route::resource('prodi', ProdiController::class);
+//Route::apiResource('api/mhs', MhsApiController::class);
 
 
 // (Tugas no.2) ------------------ 
-Route::resource('materi', Materi::class);
-Route::resource('prodi', Prodi::class);
-Route::resource('fakultas', Fakultas::class);
-Route::resource('mhs', Mahasiswa::class);
-Route::resource('dosen', Dosen::class);
+Route::resource('materi', MateriController::class);
+Route::resource('prodi', ProdiController::class);
+Route::resource('fakultas', FakultasController::class);
+Route::resource('mhs', MahasiswaController::class);
+Route::resource('dosen', DosenController::class);
 
 Route::get('/master', function(){
-    $kampus = "Universitas Multi Data Palembang";
-    $dosen = "Dosen";
-    $fakultas = "Fakultas";
-    $prodi = "Prodi";
-    $mahasiswa = "Mahasiswa";
-    $materi = "Materi";
-    return view('TugasLaravelController.master', compact('kampus', 'dosen', 'fakultas', 'prodi', 'mahasiswa','materi'));
+    return view('TugasLaravelController.master');
+});
+
+Route::get('/master', function(){
+    return view('TugasLaravelController.masterisi');
 });
 
 

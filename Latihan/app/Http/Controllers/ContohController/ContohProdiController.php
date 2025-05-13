@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Materi extends Controller
+class ProdiController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $listprodi = Prodi::all(); //SELECT * FROM prodis
+        // $listprodi = DB::table("prodis")-> get();
+       return view("prodi.index", ['listprodi'=>$listprodi]);
+
     }
 
     /**
@@ -20,6 +23,7 @@ class Materi extends Controller
     public function create()
     {
         //
+        echo "Ini halaman create prodi";
     }
 
     /**
@@ -27,7 +31,26 @@ class Materi extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Prodi::create([
+            'nama' => $data('nama'),
+            'deskripsi' => $data('deskripsi'),
+        ]);
+
+        /* Cara 2
+        Prodi::create([
+            'nama' => $data('nama'),
+            'deskripsi' => $data('deskripsi'),
+        ]); */
+
+        /* Cara 3
+        $newprodi = new Prodi();
+        $newprodi -> nama = $data['nama'];
+        $newprodi -> deskripsi = $data['deskripsi']; */
+        
+        return redirect('prodi')->with('status', 'Program Studi Berhasil Disimpan');
+
+        
     }
 
     /**
@@ -36,6 +59,7 @@ class Materi extends Controller
     public function show(string $id)
     {
         //
+        echo "Ini detail prodi dengan id ".$id;
     }
 
     /**
