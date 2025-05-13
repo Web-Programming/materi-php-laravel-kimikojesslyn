@@ -58,7 +58,7 @@ Route::get('/master', function(){
     $prodi = "Prodi";
     $mahasiswa = "Mahasiswa";
     $materi = "Materi";
-    return view('latihanLayout.master', compact('kampus', 'dosen', 'fakultas', 'prodi', 'mahasiswa','materi'));
+    return view('TugasLaravelController.master', compact('kampus', 'dosen', 'fakultas', 'prodi', 'mahasiswa','materi'));
 });
 
 
