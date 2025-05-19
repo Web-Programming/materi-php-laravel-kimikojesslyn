@@ -12,7 +12,7 @@ class Prodi extends Controller
     public function index()
     {
        
-        return(view('TugasLaravelController.prodi.index'));
+        return(view('TugasLaravel.prodi.index'));
     }
 
     /**
@@ -28,7 +28,11 @@ class Prodi extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Form Validation
+        $validateData = $request->validate([
+            'kode_prodi' => 'required|min:2|max:2',
+            'nama' => 'required|min:5|max:25'
+        ]);
     }
 
     /**
@@ -62,7 +66,7 @@ class Prodi extends Controller
 
         $prodi = $prodiList[$id];
 
-        return view('TugasLaravelController.prodi.detail', compact('prodi'));
+        return view('TugasLaravel.prodi.detail', compact('prodi'));
     }
 
     /**

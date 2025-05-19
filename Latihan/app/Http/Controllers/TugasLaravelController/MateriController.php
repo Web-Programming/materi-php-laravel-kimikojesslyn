@@ -11,7 +11,7 @@ class Materi extends Controller
      */
     public function index()
     {
-        return view('TugasLaravelController.materi.index');
+        return view('TugasLaravel.materi.index');
     }
 
     /**
@@ -51,7 +51,7 @@ class Materi extends Controller
         ];
         
         $materi = $materiList[$id];
-        return view('TugasLaravelController.materi.detail', compact('materi'));
+        return view('TugasLaravel.materi.detail', compact('materi'));
     }
 
     /**

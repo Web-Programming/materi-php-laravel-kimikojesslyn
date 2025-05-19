@@ -11,7 +11,7 @@ class Dosen extends Controller
      */
     public function index()
     {
-        return(view('TugasLaravelController.dosen.index'));
+        return(view('TugasLaravel.dosen.index'));
     }
 
     /**
@@ -53,7 +53,7 @@ class Dosen extends Controller
         ];
 
         $dosen = $dosenList[$id];
-        return view('TugasLaravelController.dosen.detail', compact('dosen'));
+        return view('TugasLaravel.dosen.detail', compact('dosen'));
     }
 
     /**

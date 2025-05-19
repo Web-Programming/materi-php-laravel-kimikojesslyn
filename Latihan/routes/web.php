@@ -59,11 +59,11 @@ Route::resource('mhs', MahasiswaController::class);
 Route::resource('dosen', DosenController::class);
 
 Route::get('/master', function(){
-    return view('TugasLaravelController.master');
+    return view('TugasLaravel.master');
 });
 
 Route::get('/master', function(){
-    return view('TugasLaravelController.masterisi');
+    return view('TugasLaravel.masterisi');
 });
 
 

@@ -1,5 +1,5 @@
-@extends('TugasLaravelController.master')
-@section('title', 'Hapus Materi')
+@extends('TugasLaravel.master')
+@section('title', 'Tambah Materi')
 
 @section('content')
     

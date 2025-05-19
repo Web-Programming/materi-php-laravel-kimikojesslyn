@@ -1,4 +1,4 @@
-@extends('TugasLaravelController.master')
+@extends('TugasLaravel.master')
 
 @section('content')
     <div class="container mt-4">
@@ -6,25 +6,25 @@
         <table class="table table-bordered">
             <tr>
                 <th>Nama</th>
-                <td>{{ $mahasiswa->nama }}</td>
+                <td>{{ $dosen->nama }}</td>
             </tr>
             <tr>
                 <th>Program Studi</th>
-                <td>{{ $mahasiswa->program }}</td>
+                <td>{{ $dosen->program }}</td>
             </tr>
             <tr>
                 <th>Status</th>
-                <td>{{ $mahasiswa->status }}</td>
+                <td>{{ $dosen->status }}</td>
             </tr>
             <tr>
                 <th>Tanggal Lahir</th>
-                <td>{{ $mahasiswa->tanggal_lahir }}</td>
+                <td>{{ $dosen->tanggal_lahir }}</td>
             </tr>
             <tr>
                 <th>Tempat Lahir</th>
-                <td>{{ $mahasiswa->tempat_lahir }}</td>
+                <td>{{ $dosen->tempat_lahir }}</td>
             </tr>
         </table>
-        <a href="{{ url('mhs') }}" class="btn btn-secondary">Back</a>
+        <a href="{{ url('dosen') }}" class="btn btn-secondary">Kembali</a>
     </div>
 @endsection

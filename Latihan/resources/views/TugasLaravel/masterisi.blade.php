@@ -1,4 +1,4 @@
-@extends('TugasLaravelController.master')
+@extends('TugasLaravel.master')
 
 @section('content')
     <main class="app-main">

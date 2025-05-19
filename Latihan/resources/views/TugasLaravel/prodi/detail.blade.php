@@ -1,4 +1,4 @@
-@extends('TugasLaraveLController.master')
+@extends('TugasLaraveL.master')
 
 @section('content')
     <div class="container mt-4">

@@ -1,4 +1,4 @@
-@extends('TugasLaravelController.master')
+@extends('TugasLaravel.master')
 @section('title', 'Hapus Prodi')
 
 @section('content')

@@ -11,7 +11,7 @@ class Fakultas extends Controller
      */
     public function index()
     {
-        return(view('TugasLaravelController.fakultas.index'));
+        return(view('TugasLaravel.fakultas.index'));
     }
 
     /**
@@ -46,7 +46,7 @@ class Fakultas extends Controller
             ],
         ];
             $fakultas = $fakultasList[$id];
-        return view('TugasLaravelController.fakultas.detail', compact('fakultas'));
+        return view('TugasLaravel.fakultas.detail', compact('fakultas'));
     }
 
     /**

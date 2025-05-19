@@ -1,4 +1,4 @@
-@extends('TugasControllerLaravel.master')
+@extends('TugasLaravel.master')
 
 @section('content')
     <div class="container mt-4">

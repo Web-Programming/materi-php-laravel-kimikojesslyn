@@ -11,7 +11,7 @@ class Mahasiswa extends Controller
      */
     public function index()
     {
-        return view('TugasLaravelController.mahasiswa.index');
+        return view('TugasLaravel.mahasiswa.index');
     }
 
     /**
@@ -54,7 +54,7 @@ class Mahasiswa extends Controller
         ];
         
         $mahasiswa = $mahasiswaList[$id];
-        return view('TugasLaravelController.mahasiswa.detail', compact('mahasiswa'));
+        return view('TugasLaravel.mahasiswa.detail', compact('mahasiswa'));
     }
 
     /**

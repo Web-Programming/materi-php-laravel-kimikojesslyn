@@ -1,24 +1,24 @@
-@extends('TugasLaravelController.master')
+@extends('TugasLaravel.master')
 
 @section('content')
     <div class="container mt-4">
-        <h3>Daftar Mahasiswa</h3>
+        <h3>Daftar Dosen</h3>
 
-        <a href="#" class="btn btn-primary mb-3">ADD Mahasiswa</a>
+        <a href="#" class="btn btn-success mb-3"> ADD Dosen </a>
 
         @php
-            $mahasiswaList = [
+            $dosenList = [
                 (object) [
                     'id' => 1,
-                    'nama' => 'Lin',
+                    'nama' => 'Jesslyn',
                     'program' => 'Sistem Informasi',
-                    'status' => 'Aktif'
+                    'status' => 'Tetap'
                 ],
                 (object) [
                     'id' => 2,
-                    'nama' => 'Ani',
-                    'program' => 'Teknik Informatika',
-                    'status' => 'Cuti'
+                    'nama' => 'Kimiko',
+                    'program' => 'Informatika',
+                    'status' => 'Kontrak'
                 ],
             ];
         @endphp
@@ -34,22 +34,22 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($mahasiswaList as $index => $mahasiswa)
+                @foreach ($dosenList as $index => $dosen)
                     <tr>
                         <td>{{ $index + 1 }}</td>
-                        <td>{{ $mahasiswa->nama }}</td>
-                        <td>{{ $mahasiswa->program }}</td>
+                        <td>{{ $dosen->nama }}</td>
+                        <td>{{ $dosen->program }}</td>
                         <td>
-                            @if ($mahasiswa->status == 'Aktif')
-                                <span class="badge badge-success">{{ $mahasiswa->status }}</span>
+                            @if ($dosen->status == 'Tetap')
+                                <span class="badge badge-success">{{ $dosen->status }}</span>
                             @else
-                                <span class="badge badge-danger">{{ $mahasiswa->status }}</span>
+                                <span class="badge badge-danger">{{ $dosen->status }}</span>
                             @endif
                         </td>
                         <td>
                             <center>
-                                <a href="{{ url('mhs/' . $mahasiswa->id) }}" class="btn btn-info btn-sm">Detail</a>
-                                <button class="btn btn-danger btn-sm" onclick="return confirm('Hapus data ini?')">Delete</button>
+                                <a href="{{ url('dosen/' . $dosen->id) }}" class="btn btn-info btn-sm">Detail</a>
+                                <button class="btn btn-danger btn-sm" onclick="return confirm('Hapus data ini?')">Hapus</button>
                             </center>
                         </td>
                     </tr>
