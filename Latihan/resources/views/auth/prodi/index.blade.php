@@ -1,4 +1,4 @@
-@extends('TugasLaravel.master')
+@extends('layout.master')
 
 @section('title', "Halaman List Prodi")
 
@@ -107,6 +107,12 @@
                       </tr>
                     @endforeach
                    </table>
+
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer">Footer</div>
+                  <!-- /.card-footer-->
+                </div>
                 <!-- /.card -->
               </div>
             </div>

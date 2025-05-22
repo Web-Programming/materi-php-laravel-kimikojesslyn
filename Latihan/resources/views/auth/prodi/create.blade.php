@@ -1,5 +1,5 @@
 
-@extends('TugasLaravel.master')
+@extends('layout.master')
 
 @section('title', "Halaman Detail Prodi")
 

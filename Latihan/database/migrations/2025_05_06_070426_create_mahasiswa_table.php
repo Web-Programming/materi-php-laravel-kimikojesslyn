@@ -16,11 +16,9 @@ return new class extends Migration
             $table->char('npm', 11)->unique();
             $table->string('nama', 150);
             $table->string('tempat_lahir', 100);
-            $table->date('tanggal_lahir'); //yyyy-mm-dd
+            $table->date('born_date'); //yyyy-mm-dd
             $table->timestamps();
-});
-
-       
+        });
     }
 
     /**

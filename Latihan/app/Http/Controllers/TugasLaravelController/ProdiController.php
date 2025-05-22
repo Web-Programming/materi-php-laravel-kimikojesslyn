@@ -40,33 +40,11 @@ class Prodi extends Controller
      */
     public function show(string $id)
     {
-        $prodiList = [
-            1 => (object)[
-                'nama' => 'Sistem Informasi',
-                'deskripsi' => 'Program Studi Sistem Informasi'
-            ],
-            2 => (object)[
-                'nama' => 'Manajemen',
-                'deskripsi' => 'Program Studi Manajemen'
-            ],
-            3 => (object)[
-                'nama' => 'Akuntasi',
-                'deskripsi' => 'Program Studi Akuntasi'
-            ],
-            4 => (object)[
-                'nama' => 'Teknik Elektro',
-                'deskripsi' => 'Program Studi Teknik Elektro'
-            ],
-            5 => (object)[
-                'nama' => 'Informatika',
-                'deskripsi' => 'Program Studi Informatika'
-            ],
-
-        ];
-
-        $prodi = $prodiList[$id];
-
-        return view('TugasLaravel.prodi.detail', compact('prodi'));
+        $prodi = Prodi::find($id);
+        if(!isset($prodi->id)){
+            return redirect("prodi")->with("failed","Program Studi Tidak Ditemukan!")
+        }
+        'prodi' => $prodi
     }
 
     /**
@@ -74,7 +52,14 @@ class Prodi extends Controller
      */
     public function edit(string $id)
     {
-        //
+        //Ambil data berdasarkan id
+        $prodi = Prodi::find($id);
+        if(!isset($prodi->id)){
+            return redirect("prodi")->with("status","Program Studi Tidak Ditemukan!")
+        }
+        return view("TugasLaravel.prodi.detail",[
+            'prodi' => $prodi
+        ]);
     }
 
     /**
@@ -90,6 +75,11 @@ class Prodi extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $prodi = Prodi::find($id);
+        if(isset($prodi->id)){
+            $prodi->delete();
+            return redirect("prodi")->with("status","Program Studi Berhasil Dihapus!")
+        }
+        return redirect("prodi")-> with("failed","Program Studi Tidak Ditemukan!")
     }
 }

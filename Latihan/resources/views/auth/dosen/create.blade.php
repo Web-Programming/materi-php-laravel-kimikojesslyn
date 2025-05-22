@@ -1,12 +1,12 @@
 @extends('TugasLaravel.master')
-@section('title', 'Hapus Prodi')
+@section('title', 'Tambah Dosen')
 
 @section('content')
     
-<h2>Program Studi</h2>
+<h2>Dosen</h2>
 <ul>
-@if (count($prodi) > 0)
-    @foreach ($prodi as $item)
+@if (count($dosen) > 0)
+    @foreach ($dosen as $item)
         <li> {{ $item }}</li>
     @endforeach
 @else
