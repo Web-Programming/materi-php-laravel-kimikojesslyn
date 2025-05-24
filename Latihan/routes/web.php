@@ -5,11 +5,17 @@ use Illuminate\Support\Facades\Route;
 //use App\Http\Controllers\ProdiController;
 
 
-use App\Http\Controllers\TugasLaravelController\MateriController;
-use App\Http\Controllers\TugasLaravelController\MahasiswaController;
-use App\Http\Controllers\TugasLaravelController\ProdiController;
-use App\Http\Controllers\TugasLaravelController\DosenController;
-use App\Http\Controllers\TugasLaravelController\FakultasController;
+use App\Http\Controllers\Controller\MateriController;
+use App\Http\Controllers\Controller\MahasiswaController;
+use App\Http\Controllers\Controller\ProdiController;
+use App\Http\Controllers\Controller\DosenController;
+use App\Http\Controllers\Controller\FakultasController;
+
+
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Controller\UserController;
+use App\Http\Middleware\CekLogin;
 
 
 Route::get('/', function () {
@@ -59,11 +65,30 @@ Route::resource('mhs', MahasiswaController::class);
 Route::resource('dosen', DosenController::class);
 
 Route::get('/master', function(){
-    return view('TugasLaravel.master');
+    return view('laravel.master');
 });
 
 Route::get('/master', function(){
-    return view('TugasLaravel.masterisi');
+    return view('laravel.masterisi');
+});
+
+//Authentication
+Route::get("/login", [AuthController::class, 'login'])->name('login');
+Route::post("/login", [AuthController::class, 'do_login']);
+Route::get("/register", [AuthController::class, 'register']);
+Route::post("/register", [AuthController::class, 'do_register']);
+Route::get("/logout", [AuthController::class, 'logout']);
+
+Route::group(['middleware' => ['auth']], function(){
+    Route::group(['middleware' => [CekLogin::class.':admin']], function(){
+        Route::get("/admin", [AdminController::class, 'index']);
+        Route::resource('prodi', ProdiController::class);
+        Route::resource('fakultas', FakultasController::class);
+    });
+
+    Route::group(['middleware' => [CekLogin::class.':user']], function(){
+        Route::get("/user", [UserController::class, 'index']);
+    });
 });
 
 
