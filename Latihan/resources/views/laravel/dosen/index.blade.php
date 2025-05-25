@@ -11,15 +11,10 @@
                 (object) [
                     'id' => 1,
                     'nama' => 'Jesslyn',
-                    'program' => 'Sistem Informasi',
+                    'program' => 'Informatika',
                     'status' => 'Tetap'
                 ],
-                (object) [
-                    'id' => 2,
-                    'nama' => 'Kimiko',
-                    'program' => 'Informatika',
-                    'status' => 'Kontrak'
-                ],
+               
             ];
         @endphp
 

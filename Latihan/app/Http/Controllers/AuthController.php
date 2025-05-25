@@ -65,7 +65,8 @@ class AuthController extends Controller
             [
                 'name' => 'required',
                 'email' => 'required|email|unique:users',
-                'password' => 'required|min:8'
+                'password' => 'required|min:8',
+                'level' => 'required|in:user,mahasiswa,dosen'
             ]
         );
         if($validator->fails()){
@@ -78,7 +79,7 @@ class AuthController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        $user->level = 'user';
+        $user->level = $request->level;
         $user->save();
 
         return redirect('login');

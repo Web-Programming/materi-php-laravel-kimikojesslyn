@@ -89,6 +89,14 @@ Route::group(['middleware' => ['auth']], function(){
     Route::group(['middleware' => [CekLogin::class.':user']], function(){
         Route::get("/user", [UserController::class, 'index']);
     });
-});
 
+    Route::group(['middleware' => ['level:mahasiswa']], function () {
+        Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
+        Route::get('/materi', [MahasiswaController::class, 'materi']);
+    });
+    Route::group(['middleware' => ['level:dosen']], function () {
+        Route::get('/dosen', [DosenController::class, 'index']);
+        Route::get('/materi', [DosenController::class, 'materi']);
+    });
+});
 

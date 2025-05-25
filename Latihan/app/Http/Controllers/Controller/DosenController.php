@@ -35,25 +35,7 @@ class DosenController extends Controller
      */
     public function show(string $id)
     {
-        $dosenList = [
-            1 => (object)[
-                'nama' => 'Andi',
-                'program' => 'Sistem Informasi',
-                'status' => 'Tetap',
-                'tanggal_lahir' => '01-01-2001',
-                'tempat_lahir' => 'Palembang'
-            ],
-            2 => (object)[
-                'nama' => 'Budi',
-                'program' => 'Informatika',
-                'status' => 'Kontrak',
-                'tanggal_lahir' => '17-08-1999',
-                'tempat_lahir' => 'Metro'
-            ],
-        ];
-
-        $dosen = $dosenList[$id];
-        return view('laravel.dosen.detail', compact('dosen'));
+      
     }
 
     /**

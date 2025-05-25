@@ -52,10 +52,19 @@
             <h1 class="mb-0">Registration Page</h1>
           </a>
         </div>
+       
         <div class="card-body register-card-body">
           <p class="register-box-msg">Register a new membership</p>
           <form action="{{ url('register') }}" method="post">
+            
             @csrf
+            <div class="mt-2 mb-3">
+              <select name="level" id="level" required class="form-select rounded-md shadow-sm mt-1 block w-full">
+                  <option value="User">User</option>
+                  <option value="Mahasiswa">Mahasiswa</option>
+                  <option value="Dosen">Dosen</option>
+              </select>
+          </div>
             <div class="input-group mb-1">
               <div class="form-floating">
                 <input id="registerFullName" name="name" type="text" class="form-control" placeholder="" value="{{ old('name') }}" />

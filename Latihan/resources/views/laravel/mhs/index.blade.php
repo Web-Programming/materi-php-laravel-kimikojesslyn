@@ -10,13 +10,7 @@
             $mahasiswaList = [
                 (object) [
                     'id' => 1,
-                    'nama' => 'Lin',
-                    'program' => 'Sistem Informasi',
-                    'status' => 'Aktif'
-                ],
-                (object) [
-                    'id' => 2,
-                    'nama' => 'Ani',
+                    'nama' => 'Kimiko',
                     'program' => 'Teknik Informatika',
                     'status' => 'Cuti'
                 ],
