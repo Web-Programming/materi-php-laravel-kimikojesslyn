@@ -13,13 +13,17 @@ class AuthController extends Controller
     function login(){
         $user = Auth::user();
 
-        //Jika user sudah login
+        //jik user sudah login
         if($user){
-            //Cek Level
+            //cek level
             if($user->level == 'admin'){
                 return redirect()->intended('admin');
-            }else if($user->level == 'user'){
+            } else if($user->level == 'user'){
                 return redirect()->intended('user');
+            } else if($user->level == 'dosen'){
+                return redirect()->intended('dosen');
+            } else if($user->level == 'mahasiswa'){
+                return redirect()->intended('mahasiswa');
             }
         }
 
@@ -31,23 +35,27 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:8'
         ]);
-        //Menyiapkan variabel cridentials
+        //menyiapkan variabel cridentials
         $credentials = $request->only('email', 'password');
 
-        //Mengecek cridentials ke tabel users meggunakan Auth
+        //cek cridentials ke tabel users meggunakan Auth
         if(Auth::attempt($credentials)){
-            //Jika berhasil login
-            //Cek level user
+            //jika berhasil login
+            //cek level user
             $user = Auth::user();
             if($user->level == 'admin'){
                 return redirect()->intended('admin');
-            }else if($user->level == 'user'){
+            } else if($user->level == 'user'){
                 return redirect()->intended('user');
+            } else if($user->level == 'dosen'){
+                return redirect()->intended('dosen');
+            } else if($user->level == 'mahasiswa'){
+                return redirect()->intended('mahasiswa');
             }
             return redirect()->intended('/');
         }
 
-        //Login gagal
+        //jika login gagal
         return redirect('login')
             ->withErrors([
                 'failed' => 'User tidak ditemukan atau password yang anda masukkan salah'
@@ -66,7 +74,7 @@ class AuthController extends Controller
                 'name' => 'required',
                 'email' => 'required|email|unique:users',
                 'password' => 'required|min:8',
-                'level' => 'required|in:user,mahasiswa,dosen'
+                'level' => 'required|in:user,admin,dosen,mahasiswa'
             ]
         );
         if($validator->fails()){
@@ -85,8 +93,10 @@ class AuthController extends Controller
         return redirect('login');
     }
 
-    function logout(){
+    function logout() {
         Auth::logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
         return redirect('login');
     }
 

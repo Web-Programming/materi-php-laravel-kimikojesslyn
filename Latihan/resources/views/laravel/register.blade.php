@@ -60,6 +60,7 @@
             @csrf
             <div class="mt-2 mb-3">
               <select name="level" id="level" required class="form-select rounded-md shadow-sm mt-1 block w-full">
+                <option value="User">Admin</option>
                   <option value="User">User</option>
                   <option value="Mahasiswa">Mahasiswa</option>
                   <option value="Dosen">Dosen</option>

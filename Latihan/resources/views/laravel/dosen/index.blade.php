@@ -14,6 +14,12 @@
                     'program' => 'Informatika',
                     'status' => 'Tetap'
                 ],
+                (object) [
+                    'id' => 2,
+                    'nama' => '-',
+                    'program' => 'Sistem Informasi',
+                    'status' => 'Tetap'
+                ],
                
             ];
         @endphp

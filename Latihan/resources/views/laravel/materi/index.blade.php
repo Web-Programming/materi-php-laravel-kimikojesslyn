@@ -10,18 +10,18 @@
             $materiList = [
                 (object) [
                     'id' => 1,
-                    'nama' => 'Pengenalan Laravel',
-                    'deskripsi' => 'Materi dasar tentang framework Laravel'
+                    'nama' => 'Materi 1',
+                    'deskripsi' => '-'
                 ],
                 (object) [
                     'id' => 2,
-                    'nama' => 'Routing Laravel',
-                    'deskripsi' => 'Membahas penggunaan route dan controller'
+                    'nama' => 'Materi 2',
+                    'deskripsi' => '-'
                 ],
                 (object) [
                     'id' => 3,
-                    'nama' => 'Template',
-                    'deskripsi' => 'Contoh Template'
+                    'nama' => 'Materi 3',
+                    'deskripsi' => '-'
                 ],
             ];
         @endphp

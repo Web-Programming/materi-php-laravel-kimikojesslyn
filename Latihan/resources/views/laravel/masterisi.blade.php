@@ -27,8 +27,8 @@
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3>150</h3>
-                                <p>New Orders</p>
+                                <h3>Tentang</h3>
+                                <p>Hubungi</p>
                             </div>
                             <div class="icon">
                                 <i class="fas fa-shopping-cart"></i>
@@ -42,8 +42,8 @@
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-success">
                             <div class="inner">
-                                <h3>53<sup style="font-size: 20px">%</sup></h3>
-                                <p>Bounce Rate</p>
+                                <h3>Mahasiswa<sup style="font-size: 20px"></sup></h3>
+                                <p>Pedoman Akademik</p>
                             </div>
                             <div class="icon">
                                 <i class="fas fa-chart-bar"></i>
@@ -57,8 +57,8 @@
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-warning">
                             <div class="inner">
-                                <h3>44</h3>
-                                <p>User Registrations</p>
+                                <h3>Program Studi</h3>
+                                <p>Informatika</p>
                             </div>
                             <div class="icon">
                                 <i class="fas fa-user-plus"></i>
@@ -72,8 +72,8 @@
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-danger">
                             <div class="inner">
-                                <h3>65</h3>
-                                <p>Unique Visitors</p>
+                                <h3>Prestasi</h3>
+                                <p>Prestasi dan Penghargaan</p>
                             </div>
                             <div class="icon">
                                 <i class="fas fa-chart-pie"></i>
@@ -85,49 +85,13 @@
                     </div>
                 </div>
 
-                <!-- Charts Row -->
-                <div class="row">
-                    <!-- Left Column -->
-                    <div class="col-lg-8">
-                        <!-- Sales Chart -->
-                        <div class="card">
-                            <div class="card-header border-0">
-                                <h3 class="card-title">Sales Overview</h3>
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <p class="d-flex flex-column">
-                                        <span class="text-bold text-lg">$18,230.00</span>
-                                        <span>Sales Over Time</span>
-                                    </p>
-                                    <p class="d-flex flex-column text-right">
-                                        <span class="text-success">
-                                            <i class="fas fa-arrow-up"></i> 12.5%
-                                        </span>
-                                        <span class="text-muted">Since last week</span>
-                                    </p>
-                                </div>
-                                <div class="position-relative mb-4">
-                                    <canvas id="sales-chart" height="250"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Right Column -->
                     <div class="col-lg-4">
                         <!-- Pie Chart -->
                         <div class="card">
                             <div class="card-header border-0">
-                                <h3 class="card-title">Traffic Sources</h3>
+                                <h3 class="card-title">News</h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                         <i class="fas fa-minus"></i>
