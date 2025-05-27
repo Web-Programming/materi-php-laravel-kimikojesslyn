@@ -86,7 +86,7 @@ Route::group(['middleware' => ['auth']], function(){
         Route::resource('fakultas', FakultasController::class);
     });
 
-    Route::group(['middleware' => [CekLogin::class.':user']], function(){
+    Route::group(['middleware' => [CekLogin::class.':user', CekLogin::class.'admin']], function(){
         Route::get("/user", [UserController::class, 'index']);
     });
 

@@ -15,6 +15,8 @@ class ProdiController extends Controller
      */
     public function index()
     {
+
+        Gate::authorize("viewAny", Prodi::class)
         $listprodi = Prodi::all(); //select * from prodis;
         //$listprodi = DB::table("prodis")->get();
         return view("prodi.index", 
@@ -77,6 +79,7 @@ class ProdiController extends Controller
      */
     public function show(string $id)
     {
+        Gate::authorize("view");
         $prodi = Prodi::find($id);
         if(!isset($prodi->id)){
             return redirect("prodi")->with("failed", "Program Studi tidak ditemukan!");
@@ -91,6 +94,10 @@ class ProdiController extends Controller
      */
     public function edit(string $id)
     {
+            if(!Gate::allows("isuser")){
+                abort(403);
+            }
+
         //Ambil data berdasarkan id
         $prodi = Prodi::find($id); 
         if(!isset($prodi->id)){
